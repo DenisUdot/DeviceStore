@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DeviceStore</string>
+    <string name="store_front">Store front</string>
+    <string name="backend">Backend</string>
+    <string name="buy">Buy</string>
+    <string name="product_name_text">Product name</string>
+    <string name="price_text">Price</string>
+    <string name="quantity_text">Quantity</string>
+</resources>
