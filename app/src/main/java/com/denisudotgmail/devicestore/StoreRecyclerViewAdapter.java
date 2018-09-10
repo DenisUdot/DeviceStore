@@ -11,34 +11,34 @@ import android.widget.TextView;
 import java.util.List;
 public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecyclerViewAdapter.ItemViewHolder> {
 
-    private List<String> mData;
+    private List<ItemData> itemDataList;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    StoreRecyclerViewAdapter(Context context, List<String> data) {
+    public StoreRecyclerViewAdapter(Context context, List<ItemData> itemDataList) {
         this.mInflater = LayoutInflater.from(context);
-        this.mData = data;
+        this.itemDataList = itemDataList;
     }
 
     // inflates the row layout from xml when needed
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.store_item, parent, false);
+        View view = mInflater.inflate(R.layout.backend_item, parent, false);
         return new ItemViewHolder(view);
     }
 
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        String animal = mData.get(position);
-        holder.myTextView.setText(animal);
+        String productName = itemDataList.get(position).getProductName();
+        holder.myTextView.setText(productName);
     }
 
     // total number of rows
     @Override
     public int getItemCount() {
-        return mData.size();
+        return itemDataList.size();
     }
 
 
@@ -48,7 +48,7 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
 
         ItemViewHolder(View itemView) {
             super(itemView);
-            myTextView = itemView.findViewById(R.id.product_name);
+            myTextView = itemView.findViewById(R.id.backend_item_name);
             itemView.setOnClickListener(this);
         }
 
@@ -59,8 +59,8 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
     }
 
     // convenience method for getting data at click position
-    String getItem(int id) {
-        return mData.get(id);
+    ItemData getItem(int id) {
+        return itemDataList.get(id);
     }
 
     // allows clicks events to be caught

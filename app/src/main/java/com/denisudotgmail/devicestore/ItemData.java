@@ -1,6 +1,8 @@
 package com.denisudotgmail.devicestore;
 
-public class ItemData {
+import java.io.Serializable;
+
+public class ItemData implements Serializable {
     private String productName;
     private int price, quantity;
 

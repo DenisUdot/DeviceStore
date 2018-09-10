@@ -5,24 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StoreFront">
-    <android.support.v4.view.ViewPager
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </android.support.v4.view.ViewPager>
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/idRecyclerViewHorizontalList"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:orientation="horizontal" />-->
-    <!--<FrameLayout-->
-        <!--android:id="@+id/fragment_container"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_above="@+id/bottom_bar">-->
-    <!--</FrameLayout>-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/store_item"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/backend_item_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:visibility="gone"/>
+
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_alignParentBottom="true"
