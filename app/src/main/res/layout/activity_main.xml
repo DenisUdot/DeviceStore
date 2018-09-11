@@ -4,21 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StoreFront">
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/store_item"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/backend_item_list"
+    tools:context=".MainActivity">
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:visibility="gone"/>
-
+        android:layout_above="@id/bottom_bar">
+        <LinearLayout
+            android:id="@+id/store_item_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/store_item"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/buy_button"
+                android:layout_margin="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/buy"/>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/backend_item_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone"/>
+    </RelativeLayout>
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_alignParentBottom="true"

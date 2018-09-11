@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ItemFragment extends Fragment {
 
@@ -49,16 +50,15 @@ public class ItemFragment extends Fragment {
         TextView productText = (TextView)result.findViewById(R.id.product_name);
         TextView priceText = (TextView)result.findViewById(R.id.price);
         TextView quantityText = (TextView)result.findViewById(R.id.quantity);
-        Button buyButton = (Button)result.findViewById(R.id.buy_button);
-        buyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(itemData.getQuantity() > 0) {
-                    itemData.setQuantity(itemData.getQuantity() - 1);
-                }
-                result.refreshDrawableState();
-            }
-        });
+//        Button buyButton = (Button)result.findViewById(R.id.buy_button);
+//        buyButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(itemData.getQuantity() > 0) {
+//                    itemData.setQuantity(itemData.getQuantity() - 1);
+//                }
+//            }
+//        });
         productText.setText(product);
         priceText.setText(Integer.toString(price));
         quantityText.setText(Integer.toString(quantity));

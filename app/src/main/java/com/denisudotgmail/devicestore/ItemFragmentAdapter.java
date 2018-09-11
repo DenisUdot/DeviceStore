@@ -24,11 +24,9 @@ public class ItemFragmentAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         return (ItemFragment.newInstance(itemDataList.get(position)));
-//        return new ItemFragment(itemDataList.get(position));
     }
-
-//    @Override
-//    public int getItemPosition(Object object) {
-//        return POSITION_NONE;
-//    }
+    @Override
+    public int getItemPosition(Object object) {
+        return POSITION_NONE;
+    }
 }
